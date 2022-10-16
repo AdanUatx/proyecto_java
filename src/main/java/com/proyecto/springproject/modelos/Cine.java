@@ -62,8 +62,4 @@ public class Cine {
         this.salas = salas;
     }
 
-    public void addSala(Sala sala){
-        this.salas.add(sala);
-        sala.getCine().add(this);
-    }
 }
