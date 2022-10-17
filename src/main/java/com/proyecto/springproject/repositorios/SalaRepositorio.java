@@ -14,5 +14,5 @@ public interface SalaRepositorio extends JpaRepository<Sala,Integer> {
     @Query("select e from Sala e where e.cines = :idCine and e.registro_activo = true")
     List<Sala> obtenerSalasPorCine(@Param("idCine") Integer idCine);
 
-    List<Sala> findSalasByCinesAndId_sala(Integer cineId);
+  
 }
