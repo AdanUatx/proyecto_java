@@ -13,7 +13,6 @@ public class SalaDTO {
     private Timestamp fecha_modificacion;
     private Boolean registro_activo;
 
-    private CineDTO cine;
 
     public SalaDTO(List<Sala> sala){
         super();
@@ -26,19 +25,6 @@ public class SalaDTO {
         this.fecha_alta = fecha_alta;
         this.fecha_modificacion = fecha_modificacion;
         this.registro_activo = registro_activo;
-    }
-
-
-
-    public SalaDTO(Sala sala) {
-        if(sala != null) {
-            this.salaID = sala.getId_sala();
-            this.num_sala = sala.getNumero_sala();
-            this.asientos = sala.getTotal_asientos();
-            this.fecha_alta = sala.getFecha_alta();
-            this.fecha_modificacion = sala.getFecha_modificacion();
-            this.registro_activo = sala.getRegistro_activo();
-        }
     }
 
     public Integer getSalaID() {

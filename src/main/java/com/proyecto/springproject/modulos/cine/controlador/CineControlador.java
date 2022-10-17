@@ -54,10 +54,4 @@ public class CineControlador {
         String respuesta = cineServicio.activarInactivar(idCine);
         return new ResponseEntity<>( respuesta, HttpStatus.OK);
     }
-
-    @GetMapping("obtener/cines/por-sala")
-    public ResponseEntity<List<CineDTO>> obtenerCinesPorSala(@RequestParam Integer idSala){
-        List<CineDTO> respuesta = cineServicio.obtenerCinesPorSala(idSala);
-        return new ResponseEntity<>(respuesta, HttpStatus.OK);
-    }
 }

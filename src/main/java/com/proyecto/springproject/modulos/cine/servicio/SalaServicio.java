@@ -18,8 +18,6 @@ public class SalaServicio {
 
     @Autowired
     private SalaRepositorio salaRepositorio;
-    @Autowired
-    private CineRepositorio cineRepositorio;
 
     public List<SalaDTO> obtenerSala(){
         List<Sala> lista = salaRepositorio.findAll();
@@ -72,9 +70,5 @@ public class SalaServicio {
         sala.setRegistro_activo(!sala.getRegistro_activo());
         salaRepositorio.save(sala);
         return "Eliminado con Exito";
-    }
-    public List<SalaDTO> obtenerSalasPorCine(Integer idCine) {
-        List<Sala> lista = salaRepositorio.obtenerSalasPorCine(idCine);
-        return lista.stream().map(SalaDTO::new).collect(Collectors.toList());
     }
 }

@@ -26,11 +26,7 @@ public class Cine {
     @Column
     private Boolean registro_activo;
 
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    @JoinTable(name = "r_cine_sala",
-            joinColumns = {@JoinColumn(name = "id_cine")},
-            inverseJoinColumns = {@JoinColumn(name = "id_sala")})
-    private Set<Sala> salas = new HashSet<>();
+
 
 
 
@@ -54,12 +50,6 @@ public class Cine {
 
     public void setRegistro_activo(Boolean registro_activo) {this.registro_activo = registro_activo;}
 
-    public Set<Sala> getSalas() {
-        return salas;
-    }
 
-    public void setSalas(Set<Sala> salas) {
-        this.salas = salas;
-    }
 
 }

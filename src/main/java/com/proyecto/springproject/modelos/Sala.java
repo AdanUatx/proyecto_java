@@ -1,13 +1,7 @@
 package com.proyecto.springproject.modelos;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "c_sala")
@@ -27,9 +21,6 @@ public class Sala {
     @Column
     private Boolean registro_activo;
 
-    @ManyToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY,mappedBy = "salas")
-
-    private Set<Cine> cines = new HashSet<>();
 
 
     public Integer getId_sala() {
@@ -60,11 +51,4 @@ public class Sala {
 
     public void setRegistro_activo(Boolean registro_activo) {this.registro_activo = registro_activo;}
 
-    public Set<Cine> getCines() {
-        return cines;
-    }
-
-    public void setCines(Set<Cine> cines) {
-        this.cines = cines;
-    }
 }

@@ -52,9 +52,5 @@ public class SalaControlador {
         String respuesta = salaServicio.activarInactivar(idSala);
         return new ResponseEntity<>( respuesta, HttpStatus.OK);
     }
-    @GetMapping("obtener/sala/por-cine")
-    public ResponseEntity<List<SalaDTO>> obtenerSalasPorCine(@RequestParam Integer idCine){
-        List<SalaDTO> respuesta = salaServicio.obtenerSalasPorCine(idCine);
-        return new ResponseEntity<>(respuesta, HttpStatus.OK);
-    }
+
 }

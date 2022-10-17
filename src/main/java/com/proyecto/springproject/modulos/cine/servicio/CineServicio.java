@@ -19,9 +19,6 @@ public class CineServicio {
     @Autowired
     private CineRepositorio cineRepositorio;
 
-    @Autowired
-    private SalaRepositorio salaRepositorio;
-
     public List<CineDTO> obtenerCine(){
         List<Cine> lista = cineRepositorio.findAll();
         //List<Empleado> lista2 = empleadoRepositorio.findByRegistro_activoIsTrue();
@@ -71,10 +68,5 @@ public class CineServicio {
        cine.setRegistro_activo(!cine.getRegistro_activo());
        cineRepositorio.save(cine);
        return "Eliminado con Exito";
-    }
-
-    public List<CineDTO> obtenerCinesPorSala(Integer idSala) {
-        List<Cine> lista = cineRepositorio.obtenerCinesPorSala(idSala);
-        return lista.stream().map(CineDTO::new).collect(Collectors.toList());
     }
 }

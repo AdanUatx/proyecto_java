@@ -14,7 +14,6 @@ public class CineDTO {
     private Timestamp fecha_modificacion;
     private Boolean registro_activo;
 
-    private SalaDTO sala;
 
     public CineDTO(){
         super();
@@ -28,29 +27,6 @@ public class CineDTO {
         this.registro_activo = registro_activo;
 
     }
-
-    public CineDTO(Integer cineID, String cine, Timestamp fecha_alta, Timestamp fecha_modificacion, Boolean registro_activo, Sala sala  ) {
-        this.cineID = cineID;
-        this.cine = cine;
-        this.fecha_alta = fecha_alta;
-        this.fecha_modificacion = fecha_modificacion;
-        this.registro_activo = registro_activo;
-        if (sala != null) {
-            this.sala = new SalaDTO(sala.getId_sala(), sala.getNumero_sala(), sala.getTotal_asientos(), sala.getFecha_alta(),sala.getFecha_modificacion(), sala.getRegistro_activo());
-        }
-    }
-
-    public CineDTO (Cine c) {
-        this.cineID = c.getId_cine();
-        this.cine = c.getNombre();
-        this.fecha_alta = c.getFecha_alta();
-        this.fecha_modificacion = c.getFecha_modificacion();
-        this.registro_activo = c.getRegistro_activo();
-    }
-
-
-
-
     public Integer getCineID() {return cineID;}
 
     public void setCineID(Integer cineID) {this.cineID = cineID;}
@@ -71,7 +47,4 @@ public class CineDTO {
 
     public void setRegistro_activo(Boolean registro_activo) {this.registro_activo = registro_activo;}
 
-    public SalaDTO getSala() {return sala;}
-
-    public void setSala(SalaDTO sala) {this.sala = sala;}
 }
