@@ -16,6 +16,4 @@ public interface CineRepositorio extends JpaRepository<Cine,Integer> {
     List<Cine> findAll();
     @Query("select e from Cine e where e.salas = :idSala and e.registro_activo = true")
     List<Cine> obtenerCinesPorSala(@Param("idSala") Integer idSala);
-
-    List<Cine> findCinesBySalasId(Integer salaID);
 }
